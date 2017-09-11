@@ -1,12 +1,12 @@
-// while https is built-in to Node.
-var https = require('https');
-
 
 function getAndPrintHTMLChunks () {
   var requestOptions = {
     host: 'sytantris.github.io',
     path: '/http-examples/step1.html'
   };
+
+  // while https is built-in to Node.
+  var https = require('https');
 
   /* Add your code here */
   https.get(requestOptions, function (response) {
@@ -15,7 +15,7 @@ function getAndPrintHTMLChunks () {
 
     // the callback is invoked when a `data` chunk is received
     response.on('data', function (data) {
-      console.log('Chunk Received.', data, '\n');
+      console.log(data, '\n');
     });
 
     // the callback is invoked when all of the data has been received
